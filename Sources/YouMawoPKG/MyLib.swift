@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct MyLib {
-    static func test() {
+public struct MyLib {
+    public static func test() {
         print("test pkg")
     }
 }
