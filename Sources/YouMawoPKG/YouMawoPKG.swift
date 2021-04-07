@@ -1,3 +1,7 @@
-struct YouMawoPKG {
-    var text = "Hello, World!"
+public struct YouMawoPKG {
+   
+    public static func ttttt(){
+        print("ertgjkrbgirunhrth")
+    }
+    
 }
