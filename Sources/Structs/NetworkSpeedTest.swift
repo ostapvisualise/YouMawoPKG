@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 #if os(iOS)
-protocol NetworkSpeedProviderDelegate: class {
+public protocol NetworkSpeedProviderDelegate: class {
     func callWhileSpeedChange(networkStatus: NetworkStatus)
 }
 
