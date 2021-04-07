@@ -10,11 +10,11 @@ import Foundation
 public struct OrdersLimit {
     var ordersLimit: Int
     var ordersPlaced: Int
-    init(_ dictionary: [String: Any]) {
+   public  init(_ dictionary: [String: Any]) {
       ordersLimit = dictionary["ordersLimit"] as? Int ?? 0
       ordersPlaced = dictionary["ordersPlaced"] as? Int ?? 0
     }
-    init (ordersLimit: Int, ordersPlaced: Int) {
+    public  init (ordersLimit: Int, ordersPlaced: Int) {
       self.ordersLimit = ordersLimit
       self.ordersPlaced = ordersPlaced
     }
