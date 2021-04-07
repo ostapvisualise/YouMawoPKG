@@ -21,7 +21,7 @@ public enum NetworkStatus :String {
 
 open class NetworkSpeedTest: UIViewController {
     
-    weak var delegate: NetworkSpeedProviderDelegate?
+    open weak var delegate: NetworkSpeedProviderDelegate?
     public var startTime = CFAbsoluteTime()
     public var stopTime = CFAbsoluteTime()
     public var bytesReceived: CGFloat = 0
