@@ -19,24 +19,24 @@ public enum NetworkStatus :String {
     case disConnected
 }
 
-class NetworkSpeedTest: UIViewController {
+open class NetworkSpeedTest: UIViewController {
     
     weak var delegate: NetworkSpeedProviderDelegate?
-    var startTime = CFAbsoluteTime()
-    var stopTime = CFAbsoluteTime()
-    var bytesReceived: CGFloat = 0
-    var testURL:String?
-    var speedTestCompletionHandler: ((_ megabytesPerSecond: CGFloat, _ error: Error?) -> Void)? = nil
-    var timerForSpeedTest:Timer?
+    public var startTime = CFAbsoluteTime()
+    public var stopTime = CFAbsoluteTime()
+    public var bytesReceived: CGFloat = 0
+    public var testURL:String?
+    public var speedTestCompletionHandler: ((_ megabytesPerSecond: CGFloat, _ error: Error?) -> Void)? = nil
+    public var timerForSpeedTest:Timer?
     
-    func networkSpeedTestStart(UrlForTestSpeed:String!){
+    public func networkSpeedTestStart(UrlForTestSpeed:String!){
         testURL = UrlForTestSpeed
         timerForSpeedTest = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(testForSpeed), userInfo: nil, repeats: true)
     }
-    func networkSpeedTestStop(){
+    public func networkSpeedTestStop(){
         timerForSpeedTest?.invalidate()
     }
-    @objc func testForSpeed()
+    @objc public func testForSpeed()
     {
         testDownloadSpeed(withTimout: 2.0, completionHandler: {(_ megabytesPerSecond: CGFloat, _ error: Error?) -> Void in
             print("%0.1f; KbPerSec = \(megabytesPerSecond)")
