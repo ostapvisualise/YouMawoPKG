@@ -8,6 +8,8 @@
 import Foundation
 
 struct MyLib {
-    
+    static func test() {
+        print("test pkg")
+    }
 }
 
